@@ -1,75 +1,242 @@
-/* Basic reset and typography */
-* {
+/* ==============================
+   GLOBAL RESET
+============================== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
-body {
-    font-family: 'Arial', sans-serif; /* Change to a custom font if the original uses one, e.g., via Google Fonts */
-    line-height: 1.6;
-    color: #333;
-    background-color: #fff; /* Assuming a white background; adjust if needed */
+html, body {
+    font-family: 'Montserrat', sans-serif;
+    background: #000;
+    color: #eee;
+    text-align: center;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+img, iframe, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Montserrat', sans-serif;
+    color: #eee;
+    margin-bottom: 15px;
+}
+
+/* ==============================
+   LINKS
+============================== */
+a {
+    color: #F15A24; /* Accent color */
+    text-decoration: none;
+}
+
+a:hover {
+    color: #E85D0E;
+}
+
+/* ==============================
+   HERO SECTION
+============================== */
+.hero {
+    width: 100%;
+    max-height: 80vh;
+    overflow: hidden;
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* ==============================
+   FEATURE SECTION
+============================== */
+.feature {
+    margin: 40px 0;
+}
+
+.feature img {
+    width: 90%;
+    max-width: 1000px;
+    border-radius: 10px;
+}
+
+/* ==============================
+   DUO SECTION
+============================== */
+.duo {
+    margin: 40px 0;
+}
+
+.duo img {
+    width: 90%;
     max-width: 800px;
-    margin: 0 auto;
+    border-radius: 10px;
+}
+
+/* ==============================
+   SHOW DATES
+============================== */
+.show-dates {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin: 50px 20px;
+}
+
+.show-dates div {
+    flex: 1 1 300px;
+}
+
+.show-dates img {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/* ==============================
+   GALLERY PAGE
+============================== */
+.gallery {
     padding: 20px;
 }
 
-/* Headings */
-h1, h2, h4 {
-    text-align: center;
+.gallery h1 {
     margin-bottom: 20px;
+    color: #F15A24; /* Accent color for headings */
 }
 
-h1 {
-    font-size: 2.5em;
-    color: #000; /* Black for emphasis */
+.gallery .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 15px;
 }
 
-h2 {
-    font-size: 1.8em;
-    color: #555;
+.gallery .grid img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
-h4 {
-    font-size: 1.2em;
-    text-transform: uppercase;
-    color: #777;
+.gallery .grid img:hover {
+    transform: scale(1.05);
 }
 
-/* Paragraphs */
-p {
-    margin-bottom: 15px;
-    text-align: justify;
+/* ==============================
+   LIGHTBOX
+============================== */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
 }
 
-/* Sections */
-section {
-    margin-bottom: 40px;
+.lightbox-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 900px;
+    border-radius: 10px;
 }
 
-/* Header */
-header {
-    padding: 20px 0;
-    border-bottom: 1px solid #eee;
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-/* HR for separation */
-hr {
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 20px 0;
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    padding: 16px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 40px;
+    user-select: none;
+    border-radius: 0 3px 3px 0;
+    transform: translateY(-50%);
 }
 
-/* Responsiveness */
-@media (max-width: 600px) {
-    body {
-        padding: 10px;
+.prev { left: 0; }
+.next { right: 0; }
+
+.prev:hover, .next:hover, .close:hover {
+    color: #F15A24;
+}
+
+/* ==============================
+   SONG MENU PAGE
+============================== */
+.song-menu {
+    padding: 20px;
+}
+
+.song-menu h1 {
+    margin-bottom: 20px;
+    color: #F15A24;
+}
+
+.song-menu .songs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.song-menu .songs img {
+    width: 300px;
+    max-width: 90%;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.song-menu .songs img:hover {
+    transform: scale(1.05);
+}
+
+/* ==============================
+   RESPONSIVE
+============================== */
+@media (max-width: 768px) {
+    .show-dates {
+        flex-direction: column;
+        gap: 20px;
     }
-    h1 {
-        font-size: 2em;
+
+    .prev, .next {
+        font-size: 30px;
+        padding: 12px;
     }
-    h2 {
-        font-size: 1.5em;
+
+    .close {
+        font-size: 30px;
+        top: 15px;
+        right: 25px;
     }
 }
