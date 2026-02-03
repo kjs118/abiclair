@@ -50,21 +50,22 @@ body {
     font-weight: 700;
 }
 
-/* HAMBURGER */
 .hamburger {
     position: absolute;
     left: 15px;
-    top: 28px;
+    top: 50%;
+    transform: translateY(-50%);
     background: none;
     border: none;
     font-size: 26px;
     display: none;
 }
 
+
 /* HERO */
 .hero {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 .hero img {
@@ -199,4 +200,8 @@ footer {
     .hamburger { display: block; }
 
     .hero img { width: 85%; }
+    
+     .about-text {
+        padding: 0 22px;
+    }
 }
