@@ -294,6 +294,19 @@ body {
     color: #3a342f;
     text-decoration: underline;
 }
+/* =============================
+   BOOKING PAGE – PUSH BACKGROUND DOWN
+============================= */
+.booking-hero {
+    background-position: center 15% !important;   /* this is the magic line */
+}
+
+/* Optional – fine-tune per breakpoint if you want it perfect everywhere */
+@media (max-width: 768px) {
+    .booking-hero {
+        background-position: center 22% !important;   /* a little lower on phones */
+    }
+}
 
 /* =============================
    BANDS SECTIONS
