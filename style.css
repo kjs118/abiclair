@@ -272,7 +272,7 @@ body {
 }
 
 .booking-content .contact-box {
-    background: white;
+    background: rgba(255, 255, 255, 0.85); /* slightly transparent white */
     padding: 40px 50px;
     border-radius: 8px;
     font-family: 'Montserrat', sans-serif;
@@ -281,6 +281,7 @@ body {
     color: #3a342f;
     display: inline-block;
 }
+
 
 .booking-content .contact-box h2 {
     font-family: 'Cormorant Garamond', serif;
