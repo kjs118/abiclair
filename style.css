@@ -83,7 +83,7 @@ body {
 }
 
 /* =============================
-   UNIVERSAL DIVIDERS
+   DIVIDERS
 ============================= */
 .divider {
     display: flex;
@@ -116,212 +116,25 @@ body {
 }
 
 /* =============================
-   ABOUT & DUO SECTIONS
-============================= */
-.about, .duo {
-    max-width: 1000px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
-}
-
-.about img, .duo img {
-    width: 100%;
-    max-width: 420px;
-}
-
-.about-text, .duo-text {
-    text-align: center;
-    font-size: 1.05rem;
-    line-height: 1.7;
-}
-
-.duo-text h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2rem;
-    color: #D7BE69;
-    font-weight: 400;
-    text-align: center;
-}
-
-/* =============================
-   CONNECT / SOCIAL ICONS
-============================= */
-.connect {
-    text-align: center;
-    margin: 40px 0;
-}
-
-.social-wrap {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 20px;
-}
-
-.social {
-    width: 55px;
-    height: 55px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    overflow: hidden;
-}
-
-.social svg {
-    width: 60%;
-    height: 60%;
-    display: block;
-    fill: white;
-}
-
-.facebook {
-    background-color: #1877f2;
-}
-
-.instagram {
-    background-color: #e1306c;
-}
-
-/* =============================
-   SHOW DATES IMAGES
-============================= */
-.show-month img {
-    max-height: 750px;
-    width: auto;
-    max-width: 90%;
-    display: block;
-    margin: 0 auto 20px;
-    border-radius: 8px;
-    object-fit: cover;
-}
-
-.show-week img {
-    max-height: 450px;
-    width: auto;
-    max-width: 85%;
-    display: block;
-    margin: 0 auto 20px;
-    border-radius: 8px;
-    object-fit: cover;
-}
-
-/* =============================
-   SONG MENU IMAGES
-============================= */
-.song-menu {
-    text-align: center;
-    margin: 50px 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 40px;
-}
-
-.song-menu .song-img {
-    width: 80%;
-    max-width: 500px;
-    border-radius: 8px;
-    margin: 0 auto;
-}
-
-/* =============================
-   GALLERY GRID
-============================= */
-.gallery {
-    max-width: 1100px;
-    margin: 50px auto;
-    padding: 0 15px;
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.gallery-img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.gallery-img:hover {
-    transform: scale(1.05);
-}
-
-/* =============================
-   BOOKING HERO
-============================= */
-.booking-hero {
-    background: url('assets/abihero.jpg') center center / cover no-repeat;
-    height: 100vh; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 0 20px;
-}
-
-.booking-content .contact-box {
-    background: rgba(255, 255, 255, 0.85);
-    padding: 40px 50px;
-    border-radius: 8px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.2rem;
-    line-height: 1.8;
-    color: #3a342f;
-    display: inline-block;
-}
-
-.booking-content .contact-box h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.8rem;
-    color: #D7BE69;
-    margin-bottom: 20px;
-}
-
-.booking-content .contact-box a {
-    color: #3a342f;
-    text-decoration: underline;
-}
-
-/* =============================
-   FOOTER
-============================= */
-footer {
-    text-align: center;
-    padding: 30px;
-    color: #777;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.8rem;
-}
-
-/* =============================
-   BANDS PAGE
+   BANDS SECTIONS
 ============================= */
 .band-section {
     max-width: 1100px;
     margin: 50px auto;
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columns on desktop */
+    grid-template-columns: 1fr 1fr; /* 2 columns on desktop */
     gap: 60px;
     align-items: center;
 }
 
-.band-section:nth-of-type(even) {
-    direction: rtl; /* flip even rows */
-}
+.band-section:nth-child(1) .band-img { order: 1; }
+.band-section:nth-child(1) .band-text { order: 2; }
 
-.band-section:nth-of-type(even) .band-img,
-.band-section:nth-of-type(even) .band-text {
-    direction: ltr;
-}
+.band-section:nth-child(2) .band-img { order: 2; }
+.band-section:nth-child(2) .band-text { order: 1; }
+
+.band-section:nth-child(3) .band-img { order: 1; }
+.band-section:nth-child(3) .band-text { order: 2; }
 
 .band-img img {
     width: 100%;
@@ -369,20 +182,20 @@ footer {
 }
 
 /* =============================
-   MOBILE ADJUSTMENTS
+   MOBILE BANDS
 ============================= */
 @media (max-width: 768px) {
     .band-section {
         display: flex;
-        flex-direction: column;
-        gap: 30px;
+        flex-direction: column; /* stacked on mobile */
+        gap: 20px;
         padding: 0 15px;
         text-align: center;
     }
 
     .band-img img {
-        max-width: 420px;
         width: 90%;
+        max-width: 420px;
         margin: 0 auto;
     }
 
@@ -393,10 +206,14 @@ footer {
     .band-text p {
         font-size: 1rem;
     }
+
+    .band-footer-social {
+        justify-content: center;
+    }
 }
 
 /* =============================
-   ABOUT, DUO MOBILE
+   ABOUT & DUO MOBILE
 ============================= */
 @media (max-width: 768px) {
     .about, .duo {
