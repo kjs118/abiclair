@@ -89,7 +89,7 @@ body {
 /* =============================
    SECTION DIVIDERS
 ============================= */
-/* Song Menu Divider */
+/* Song Menu Divider - independent of other dividers */
 .divider-order {
     display: flex;
     align-items: center;
@@ -113,11 +113,11 @@ body {
     font-weight: 400;
     letter-spacing: 1px;
     text-align: center;
-    white-space: nowrap; /* prevents excessive wrapping on desktop */
-    max-width: 70%;       /* leaves some room for the lines */
+    white-space: nowrap; /* prevents extra wrapping on desktop */
+    max-width: 70%;       /* keeps the lines visible on sides */
 }
 
-/* MOBILE OVERRIDE */
+/* Mobile adjustments */
 @media (max-width: 768px) {
     .divider-order {
         gap: 10px;
@@ -126,7 +126,7 @@ body {
     .divider-order span {
         font-size: 1.6rem;
         max-width: 90%;
-        white-space: normal; /* allow wrapping nicely on mobile */
+        white-space: normal; /* allows wrapping nicely on mobile */
     }
 }
 
