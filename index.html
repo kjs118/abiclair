@@ -1,40 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Abi Clair — Home</title>
-    <link rel="stylesheet" href="style.css"/>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Abi Clair</title>
+<link rel="stylesheet" href="style.css"/>
 </head>
 
 <body>
-<div class="page-wrap">
 
-    <!-- HERO -->
-    <section class="hero">
-        <img src="assets/abihero.jpg" alt="Abi Hero">
-    </section>
+<header class="site-header">
+    <div class="header-inner">
+        <button class="hamburger" id="hamburger">&#9776;</button>
+        <h1 class="logo">ABI CLAIR</h1>
+        <nav class="nav" id="nav">
+            <a href="#">Home</a>
+            <a href="#">Show Dates</a>
+            <a href="#">Song Menu</a>
+            <a href="#">Gallery</a>
+            <a href="#">Booking</a>
+            <a href="#">Spotify</a>
+            <a href="#">Apple Music</a>
+        </nav>
+    </div>
+</header>
 
-    <!-- MAIN IMAGE -->
-    <section class="feature">
+<section class="hero">
+    <img src="assets/abihero.jpg" alt="Abi Hero">
+</section>
+
+<div class="divider"><span>ABOUT ABI</span></div>
+
+<section class="about">
+    <div class="about-img">
         <img src="assets/abimain.jpg" alt="Abi Main">
-    </section>
+    </div>
+    <div class="about-text">
+        <p>
+        Immerse yourself in the mesmerizing sounds of Lafayette's very own singer-songwriter-guitarist, Abi Clair...
+        </p>
+    </div>
+</section>
 
-    <!-- DUO IMAGE -->
-    <section class="duo">
-        <img src="assets/abikj.jpg" alt="Abi & Kj Duo">
-    </section>
+<section class="duo">
+    <div class="duo-text">
+        <h2>RETRO ROCK DUO!</h2>
+    </div>
+    <div class="duo-img">
+        <img src="assets/abikj.jpg" alt="Abi & KJ">
+    </div>
+</section>
 
-    <!-- SHOW DATES -->
-    <section class="show-dates">
-        <h2>This Month</h2>
-        <img src="assets/feb.jpg" alt="This month dates">
+<div class="divider"><span>CONNECT</span></div>
 
-        <h2>This Week</h2>
-        <img src="assets/thisweek.jpg" alt="This week dates">
-    </section>
+<section class="connect">
+    <a href="#" class="social facebook">
+        <svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 10-11.6 9.9v-7h-2.6V12h2.6V9.8c0-2.6 1.6-4 3.9-4 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.7-1.6 1.5V12h2.8l-.5 2.9h-2.3v7A10 10 0 0022 12z"/></svg>
+    </a>
+    <a href="#" class="social instagram">
+        <svg viewBox="0 0 24 24"><path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm5 5.2A4.8 4.8 0 1112 17a4.8 4.8 0 010-9.8zm0 2A2.8 2.8 0 1012 15a2.8 2.8 0 000-5.6zm4.5-2.9a1.1 1.1 0 110 2.2 1.1 1.1 0 010-2.2z"/></svg>
+    </a>
+</section>
 
-</div>
+<footer>
+    © 2026 Abi Clair. All Rights Reserved.
+</footer>
+
+<script>
+const hamburger = document.getElementById('hamburger');
+const nav = document.getElementById('nav');
+hamburger.onclick = () => nav.classList.toggle('open');
+</script>
+
 </body>
-
 </html>
