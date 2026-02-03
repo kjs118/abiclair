@@ -285,14 +285,14 @@ body {
 ============================= */
 .booking-hero {
     background: url('assets/abihero.jpg') center center / cover no-repeat;
-     width: 750%;
+     width: 100%;
     max-width: 500px;
     display: block;
     margin: 0 auto;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 30 30px;
+    padding: 50 30px;
 }
 
 .booking-content .contact-box {
