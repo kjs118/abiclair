@@ -41,6 +41,7 @@ body {
     justify-content: center;
     gap: 22px;
     margin-bottom: 20px;
+    transition: transform 0.3s ease;
 }
 
 .nav a {
@@ -67,7 +68,7 @@ body {
     font-size: 26px;
     display: none;
     z-index: 1000;
-    color: black;
+    color: black; /* ensures black on mobile */
 }
 
 /* =============================
@@ -75,7 +76,7 @@ body {
 ============================= */
 .hero {
     text-align: center;
-    margin-top: 30px;
+    margin-top: 30px; /* space below nav */
 }
 
 .hero img {
@@ -86,7 +87,7 @@ body {
 }
 
 /* =============================
-   DIVIDERS
+   UNIVERSAL DIVIDERS
 ============================= */
 .divider {
     display: flex;
@@ -263,7 +264,7 @@ body {
 ============================= */
 .booking-hero {
     background: url('assets/abihero.jpg') center center / cover no-repeat;
-    height: 100vh;
+    height: 100vh; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -306,27 +307,22 @@ footer {
 }
 
 /* =============================
-   BANDS SECTIONS (DESKTOP)
+   BANDS SECTIONS (CORRECTED)
 ============================= */
 .band-section {
     max-width: 1100px;
     margin: 50px auto;
     display: grid;
-    grid-template-columns: 1fr 1fr; /* 2 columns desktop */
+    grid-template-columns: 1fr 1fr; /* desktop 2 columns */
     gap: 60px;
     align-items: center;
+    text-align: center;
 }
 
 .band-section .band-img img {
     width: 100%;
     border-radius: 8px;
     object-fit: cover;
-}
-
-.band-text {
-    text-align: center;
-    font-size: 1.05rem;
-    line-height: 1.7;
 }
 
 .band-text h2 {
@@ -336,35 +332,15 @@ footer {
     margin-bottom: 15px;
 }
 
-/* MOBILE */
-@media (max-width: 768px) {
-    .band-section {
-        grid-template-columns: 1fr; /* stack on mobile */
-        gap: 30px;
-        padding: 0 15px;
-        text-align: center;
-    }
-
-    .band-section .band-img img {
-        max-width: 420px;
-        width: 90%;
-        margin: 0 auto;
-    }
-
-    .band-text h2 {
-        font-size: 1.8rem;
-    }
-
-    .band-text p {
-        font-size: 1rem;
-    }
+.band-text p {
+    font-size: 1.05rem;
+    line-height: 1.7;
 }
-
 
 .band-footer-social {
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 20px;
     margin-top: 15px;
 }
 
@@ -385,39 +361,26 @@ footer {
     fill: #fff;
 }
 
-/* =============================
-   MOBILE BANDS
-============================= */
-@media (max-width: 768px) {
-  .band-section {
-        grid-template-columns: 1fr; /* stack on mobile */
-        gap: 30px;
-        padding: 0 15px;
-        text-align: center;
-    }
+/* Alternating rows for desktop */
+.band-section:nth-of-type(2) {
+    grid-template-columns: 1fr 1fr; 
+}
 
-    .band-section .band-img img {
-        max-width: 420px;
-        width: 90%;
-        margin: 0 auto;
-    }
-
-    .band-text h2 {
-        font-size: 1.8rem;
-    }
-
-    .band-text p {
-        font-size: 1rem;
-    }
-    .band-footer-social {
-        justify-content: center;
-    }
+.band-section:nth-of-type(2) .band-img {
+    order: 2; /* swap for second row */
 }
 
 /* =============================
-   ABOUT & DUO MOBILE
+   MOBILE
 ============================= */
 @media (max-width: 768px) {
+
+    /* HERO */
+    .hero img {
+        width: 85%;
+    }
+
+    /* About & Duo stacked */
     .about, .duo {
         grid-template-columns: 1fr;
         text-align: center;
@@ -432,10 +395,7 @@ footer {
         padding: 0 22px;
     }
 
-    .hero img {
-        width: 85%;
-    }
-
+    /* Show dates and song menu images full width */
     .song-menu .song-img,
     .show-month img,
     .show-week img {
@@ -443,12 +403,14 @@ footer {
         max-height: none;
     }
 
+    /* Divider text adjustments */
     .divider span {
         font-size: 1.6rem;
         max-width: 90%;
         white-space: normal;
     }
 
+    /* NAV overlay */
     .nav {
         position: fixed;
         top: 0;
@@ -473,7 +435,6 @@ footer {
         padding: 20px 0;
         font-size: 1.2rem;
         border-bottom: 1px solid #ddd;
-        text-align: center;
     }
 
     .nav a:last-child {
@@ -484,8 +445,34 @@ footer {
         display: block;
     }
 
+    /* Gallery mobile grid */
     .gallery-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
+    }
+
+    /* Bands section stacked mobile */
+    .band-section {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 0 15px;
+    }
+
+    .band-section .band-img img {
+        max-width: 420px;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .band-text h2 {
+        font-size: 1.8rem;
+    }
+
+    .band-text p {
+        font-size: 1rem;
+    }
+
+    .band-footer-social {
+        justify-content: center;
     }
 }
