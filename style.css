@@ -89,17 +89,25 @@ body {
 /* =============================
    SECTION DIVIDERS
 ============================= */
-/* Song Menu Divider - independent of other dividers */
+/* =============================
+   SONG MENU DIVIDER - independent
+============================= */
 .divider-order {
     display: flex;
-    align-items: center;
     justify-content: center;
-    margin: 70px 0 40px;
-    gap: 20px; /* space between text and lines */
+    margin: 70px auto 40px;
 }
 
-.divider-order::before,
-.divider-order::after {
+.divider-order .divider-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    max-width: 1100px; /* same as nav/container */
+    width: 100%;
+}
+
+.divider-order .divider-content::before,
+.divider-order .divider-content::after {
     content: "";
     flex: 1;
     height: 1px;
@@ -113,22 +121,21 @@ body {
     font-weight: 400;
     letter-spacing: 1px;
     text-align: center;
-    white-space: nowrap; /* prevents extra wrapping on desktop */
-    max-width: 70%;       /* keeps the lines visible on sides */
+    white-space: nowrap; /* prevents wrapping on desktop */
 }
 
-/* Mobile adjustments */
+/* MOBILE */
 @media (max-width: 768px) {
-    .divider-order {
+    .divider-order .divider-content {
         gap: 10px;
     }
 
     .divider-order span {
         font-size: 1.6rem;
-        max-width: 90%;
-        white-space: normal; /* allows wrapping nicely on mobile */
+        white-space: normal; /* allow wrapping */
     }
 }
+
 
 
 /* =============================
