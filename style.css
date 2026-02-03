@@ -68,7 +68,7 @@ body {
     font-size: 26px;
     display: none;
     z-index: 1000;
-    color: black; /* ensures black on mobile */
+    color: black;
 }
 
 /* =============================
@@ -76,7 +76,7 @@ body {
 ============================= */
 .hero {
     text-align: center;
-    margin-top: 30px; /* space below nav */
+    margin-top: 30px;
 }
 
 .hero img {
@@ -307,16 +307,24 @@ footer {
 }
 
 /* =============================
-   BANDS SECTIONS (CORRECTED)
+   BANDS SECTIONS
 ============================= */
 .band-section {
     max-width: 1100px;
     margin: 50px auto;
     display: grid;
-    grid-template-columns: 1fr 1fr; /* desktop 2 columns */
+    grid-template-columns: 1fr 1fr;
     gap: 60px;
     align-items: center;
-    text-align: center;
+}
+
+/* Alternating band rows on desktop */
+.band-section:nth-of-type(2) .band-img {
+    order: 2;
+}
+
+.band-section:nth-of-type(2) .band-text {
+    order: 1;
 }
 
 .band-section .band-img img {
@@ -325,14 +333,8 @@ footer {
     object-fit: cover;
 }
 
-.band-text h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2rem;
-    color: #D7BE69;
-    margin-bottom: 15px;
-}
-
-.band-text p {
+.band-section .band-text {
+    text-align: center;
     font-size: 1.05rem;
     line-height: 1.7;
 }
@@ -361,26 +363,41 @@ footer {
     fill: #fff;
 }
 
-/* Alternating rows for desktop */
-.band-section:nth-of-type(2) {
-    grid-template-columns: 1fr 1fr; 
-}
+/* =============================
+   MOBILE ADJUSTMENTS
+============================= */
+@media (max-width: 768px) {
+    .band-section {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 30px;
+        padding: 0 15px;
+    }
 
-.band-section:nth-of-type(2) .band-img {
-    order: 2; /* swap for second row */
+    .band-section .band-img,
+    .band-section .band-text {
+        order: unset; /* remove desktop ordering */
+    }
+
+    .band-section .band-img img {
+        width: 90%;
+        max-width: 420px;
+        margin: 0 auto;
+    }
+
+    .band-text h2 {
+        font-size: 1.8rem;
+    }
+
+    .band-text p {
+        font-size: 1rem;
+    }
 }
 
 /* =============================
-   MOBILE
+   ABOUT & DUO SECTIONS MOBILE
 ============================= */
 @media (max-width: 768px) {
-
-    /* HERO */
-    .hero img {
-        width: 85%;
-    }
-
-    /* About & Duo stacked */
     .about, .duo {
         grid-template-columns: 1fr;
         text-align: center;
@@ -395,7 +412,10 @@ footer {
         padding: 0 22px;
     }
 
-    /* Show dates and song menu images full width */
+    .hero img {
+        width: 85%;
+    }
+
     .song-menu .song-img,
     .show-month img,
     .show-week img {
@@ -403,14 +423,12 @@ footer {
         max-height: none;
     }
 
-    /* Divider text adjustments */
     .divider span {
         font-size: 1.6rem;
         max-width: 90%;
         white-space: normal;
     }
 
-    /* NAV overlay */
     .nav {
         position: fixed;
         top: 0;
@@ -435,6 +453,7 @@ footer {
         padding: 20px 0;
         font-size: 1.2rem;
         border-bottom: 1px solid #ddd;
+        text-align: center;
     }
 
     .nav a:last-child {
@@ -445,34 +464,8 @@ footer {
         display: block;
     }
 
-    /* Gallery mobile grid */
     .gallery-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
-    }
-
-    /* Bands section stacked mobile */
-    .band-section {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        padding: 0 15px;
-    }
-
-    .band-section .band-img img {
-        max-width: 420px;
-        width: 90%;
-        margin: 0 auto;
-    }
-
-    .band-text h2 {
-        font-size: 1.8rem;
-    }
-
-    .band-text p {
-        font-size: 1rem;
-    }
-
-    .band-footer-social {
-        justify-content: center;
     }
 }
