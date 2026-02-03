@@ -318,14 +318,6 @@ footer {
     align-items: center;
 }
 
-/* Alternating band rows on desktop */
-.band-section:nth-of-type(2) .band-img {
-    order: 2;
-}
-
-.band-section:nth-of-type(2) .band-text {
-    order: 1;
-}
 
 .band-section .band-img img {
     width: 100%;
