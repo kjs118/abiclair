@@ -212,6 +212,31 @@ body {
     border-radius: 8px;
     object-fit: cover;
 }
+/* =============================
+   SONG MENU IMAGES
+============================= */
+.song-menu {
+    text-align: center;
+    margin: 50px 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.song-menu .song-img {
+    width: 48%; /* roughly half the screen on desktop */
+    max-width: 450px; /* optional cap */
+    border-radius: 8px;
+}
+
+/* MOBILE OVERRIDE */
+@media (max-width: 768px) {
+    .song-menu .song-img {
+        width: 90%;  /* small padding from edges on mobile */
+        margin-bottom: 20px;
+    }
+}
 
 /* =============================
    FOOTER
