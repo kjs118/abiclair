@@ -87,26 +87,25 @@ body {
 }
 
 /* =============================
-   SECTION DIVIDERS
-============================= */
-/* =============================
-   UNIVERSAL DIVIDERS
+   DIVIDERS (unified for all pages)
 ============================= */
 .divider {
     display: flex;
-    align-items: center; /* vertical center */
+    align-items: center;       /* vertical center */
     justify-content: center;
-    margin: 70px auto 40px;
-    gap: 15px; /* space between text and lines */
-    padding: 0 15px; /* padding on left/right edges */
+    gap: 20px;                 /* space between text and lines */
+    padding: 0 15px;           /* padding on left/right edges */
+    margin: 70px auto 40px;    /* spacing above/below */
+    max-width: 1100px;         /* restrict total width */
 }
 
 .divider::before,
 .divider::after {
     content: "";
-    flex: 1; /* lines grow equally */
+    flex: 1;                  /* lines grow equally */
     height: 1px;
     background: #ccc;
+    margin: 0 10px;           /* padding between line and text */
 }
 
 .divider span {
@@ -114,27 +113,23 @@ body {
     font-size: 2rem;
     font-weight: 400;
     color: #D7BE69;
-    letter-spacing: 1px;
     text-align: center;
-    white-space: nowrap; /* prevents unwanted wrapping on desktop */
-    max-width: 70%; /* text will never exceed 70% of container */
+    white-space: nowrap;
+    max-width: 70%;           /* prevents text from stretching too far */
 }
 
-/* =============================
-   MOBILE ADJUSTMENTS
-============================= */
+/* MOBILE DIVIDERS */
 @media (max-width: 768px) {
     .divider {
-        gap: 10px; /* less space on mobile between lines and text */
+        gap: 10px;
     }
 
     .divider span {
         font-size: 1.6rem;
+        max-width: 90%;
         white-space: normal; /* allows wrapping nicely on mobile */
-        max-width: 90%; /* slightly wider text area on mobile */
     }
 }
-
 
 /* =============================
    ABOUT & DUO SECTIONS
@@ -153,19 +148,18 @@ body {
     max-width: 420px;
 }
 
-.about-text {
+.about-text, .duo-text {
     text-align: center;
     font-size: 1.05rem;
     line-height: 1.7;
 }
 
-/* Duo text */
 .duo-text h2 {
     font-family: 'Cormorant Garamond', serif;
     font-size: 2rem;
     color: #D7BE69;
     font-weight: 400;
-   text-align: center;
+    text-align: center;
 }
 
 /* =============================
@@ -241,7 +235,7 @@ body {
     text-align: center;
     margin: 50px 0;
     display: flex;
-    flex-direction: column; /* stack in 2 rows */
+    flex-direction: column;
     justify-content: center;
     gap: 40px;
 }
@@ -264,7 +258,7 @@ body {
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns desktop */
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 
@@ -285,14 +279,12 @@ body {
 ============================= */
 .booking-hero {
     background: url('assets/abihero.jpg') center center / cover no-repeat;
-     width: 100%;
-    max-width: 500px;
-    display: block;
-    margin: 0 auto;
+    height: 100vh; /* full screen */
+    display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 50 30px;
+    padding: 0 20px;
 }
 
 .booking-content .contact-box {
@@ -305,7 +297,6 @@ body {
     color: #3a342f;
     display: inline-block;
 }
-
 
 .booking-content .contact-box h2 {
     font-family: 'Cormorant Garamond', serif;
@@ -331,171 +322,80 @@ footer {
 }
 
 /* =============================
-   BANDS PAGE SECTIONS
+   BANDS SECTIONS
 ============================= */
 .band-section {
-    max-width: 1100px; /* same as main container */
-    margin: 60px auto;
-    display: flex;
-    align-items: center;
+    max-width: 1100px;
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* desktop: image + text */
     gap: 60px;
-    padding: 0 20px;
-}
-
-.band-section.reverse {
-    flex-direction: row-reverse; /* alternate image left/right */
-}
-
-.band-content {
-    display: flex;
-    width: 100%;
     align-items: center;
-    gap: 60px;
 }
 
-.band-img, .band-text {
-    flex: 1;
+.band-section:nth-child(even) .band-img {
+    order: 2; /* alternate image/text */
 }
 
-.band-img img {
+.band-section .band-img img {
     width: 100%;
     border-radius: 8px;
     object-fit: cover;
 }
 
-/* Text styling */
-.band-text h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2rem;
-    color: #D7BE69;
-    font-weight: 400;
-    margin-bottom: 15px;
-}
-
-.band-text p {
-    font-family: 'Montserrat', sans-serif;
+.band-section .band-text {
+    text-align: center;
     font-size: 1.05rem;
     line-height: 1.7;
-    color: #3a342f;
 }
 
-/* =============================
-   BAND SECTION SOCIAL ICONS
-============================= */
+/* Footer socials inside band section */
+.band-footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 15px;
+}
+
 .band-footer-social .social {
-    width: 40px;  /* smaller than main icons */
+    width: 40px;
     height: 40px;
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 50%;
-    overflow: hidden;
-    background-color: #000; /* black background */
+    background-color: #000;
 }
 
 .band-footer-social .social svg {
     width: 60%;
     height: 60%;
-    fill: #fff; /* white icons */
+    fill: #fff;
 }
-
-/* Optional spacing between icons */
-.band-footer-social {
-    margin-top: 15px;
-    display: flex;
-    gap: 15px;
-}
-
-/* =============================
-   DIVIDER (reusable for bands page)
-============================= */
-.divider {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 70px auto 40px;
-    gap: 20px;
-    padding: 0 15px;
-    max-width: 1100px;
-}
-
-.divider::before,
-.divider::after {
-    content: "";
-    flex: 1;
-    height: 1px;
-    background: #ccc;
-    margin: 0 10px; /* padding between line and text */
-}
-
-.divider span {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2rem;
-    color: #D7BE69;
-    font-weight: 400;
-    text-align: center;
-    white-space: nowrap;
-    max-width: 70%; /* prevents text from stretching too far */
-}
-
-/* =============================
-   MOBILE BANDS PAGE
-============================= */
-@media (max-width: 768px) {
-    .band-section,
-    .band-section.reverse {
-        flex-direction: column; /* stack image above text */
-        gap: 30px;
-    }
-
-    .band-text h2 {
-        font-size: 1.8rem;
-    }
-
-    .band-text p {
-        font-size: 1rem;
-    }
-
-    .band-footer-social {
-        justify-content: center;
-    }
-
-    .divider span {
-        font-size: 1.6rem;
-        max-width: 90%;
-        white-space: normal; /* allow text to wrap */
-    }
-}
-
 
 /* =============================
    MOBILE STYLES
 ============================= */
 @media (max-width: 768px) {
-
-    /* About and Duo stacked */
+    /* General mobile adjustments */
     .about, .duo {
         grid-template-columns: 1fr;
         text-align: center;
     }
 
-    /* Add small padding on the sides for abimain & abikj */
     .about-img, .duo-img {
         order: -1;
         padding: 0 15px;
     }
 
-    /* About text padding */
     .about-text {
         padding: 0 22px;
     }
 
-    /* Hero image smaller */
     .hero img {
         width: 85%;
     }
 
-    /* Show dates and song menu images full width */
     .song-menu .song-img,
     .show-month img,
     .show-week img {
@@ -503,13 +403,6 @@ footer {
         max-height: none;
     }
 
-    /* Divider "Order Your Favorites" center aligned & wraps nicely */
-    .song-menu + .divider span {
-        text-align: center;
-        white-space: normal; /* allows wrapping */
-    }
-
-    /* NAV overlay */
     .nav {
         position: fixed;
         top: 0;
@@ -543,12 +436,40 @@ footer {
 
     .hamburger {
         display: block;
-        color: black;
     }
 
-    /* Gallery mobile grid */
     .gallery-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
+    }
+
+    /* Bands sections stack on mobile */
+    .band-section {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .band-section .band-img img {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    .band-text h2 {
+        font-size: 1.8rem;
+    }
+
+    .band-text p {
+        font-size: 1rem;
+    }
+
+    .band-footer-social {
+        justify-content: center;
+    }
+
+    /* Divider adjustments on mobile */
+    .divider span {
+        font-size: 1.6rem;
+        max-width: 90%;
+        white-space: normal;
     }
 }
