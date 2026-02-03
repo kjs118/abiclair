@@ -90,52 +90,52 @@ body {
    SECTION DIVIDERS
 ============================= */
 /* =============================
-   SONG MENU DIVIDER - independent
+   UNIVERSAL SECTION DIVIDER
 ============================= */
-.divider-order {
+.divider {
     display: flex;
+    align-items: center;          /* vertical center line with text */
     justify-content: center;
-    margin: 70px auto 40px;
-}
-
-.divider-order .divider-content {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    max-width: 1100px; /* same as nav/container */
     width: 100%;
+    margin: 70px 0 40px;
+    padding: 0 15px;              /* padding so lines don't touch edges */
 }
 
-.divider-order .divider-content::before,
-.divider-order .divider-content::after {
+.divider::before,
+.divider::after {
     content: "";
     flex: 1;
     height: 1px;
     background: #ccc;
+    max-width: 15%;               /* line max width ~15% each side */
 }
 
-.divider-order span {
+.divider span {
     font-family: 'Cormorant Garamond', serif;
     font-size: 2rem;
-    color: #D7BE69;
     font-weight: 400;
     letter-spacing: 1px;
+    color: #D7BE69;
     text-align: center;
-    white-space: nowrap; /* prevents wrapping on desktop */
+    max-width: 70%;               /* text won't exceed 70% of container */
+    white-space: nowrap;           /* prevents wrapping on desktop */
 }
 
-/* MOBILE */
+/* =============================
+   MOBILE ADJUSTMENTS
+============================= */
 @media (max-width: 768px) {
-    .divider-order .divider-content {
-        gap: 10px;
+    .divider::before,
+    .divider::after {
+        max-width: 20%;           /* slightly longer lines on small screens */
     }
 
-    .divider-order span {
+    .divider span {
         font-size: 1.6rem;
-        white-space: normal; /* allow wrapping */
+        max-width: 90%;
+        white-space: normal;       /* allows wrapping nicely */
     }
 }
-
 
 
 /* =============================
