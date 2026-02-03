@@ -331,6 +331,134 @@ footer {
 }
 
 /* =============================
+   BANDS PAGE SECTIONS
+============================= */
+.band-section {
+    max-width: 1100px; /* same as main container */
+    margin: 60px auto;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    padding: 0 20px;
+}
+
+.band-section.reverse {
+    flex-direction: row-reverse; /* alternate image left/right */
+}
+
+.band-content {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 60px;
+}
+
+.band-img, .band-text {
+    flex: 1;
+}
+
+.band-img img {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* Text styling */
+.band-text h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    color: #D7BE69;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.band-text p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #3a342f;
+}
+
+/* Small footer for social icons under each band */
+.band-footer-social {
+    margin-top: 15px;
+    display: flex;
+    gap: 20px;
+}
+
+.band-footer-social .social {
+    width: 40px;
+    height: 40px;
+}
+
+.band-footer-social .social svg {
+    width: 60%;
+    height: 60%;
+}
+
+/* =============================
+   DIVIDER (reusable for bands page)
+============================= */
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 70px auto 40px;
+    gap: 20px;
+    padding: 0 15px;
+    max-width: 1100px;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #ccc;
+    margin: 0 10px; /* padding between line and text */
+}
+
+.divider span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    color: #D7BE69;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    max-width: 70%; /* prevents text from stretching too far */
+}
+
+/* =============================
+   MOBILE BANDS PAGE
+============================= */
+@media (max-width: 768px) {
+    .band-section,
+    .band-section.reverse {
+        flex-direction: column; /* stack image above text */
+        gap: 30px;
+    }
+
+    .band-text h2 {
+        font-size: 1.8rem;
+    }
+
+    .band-text p {
+        font-size: 1rem;
+    }
+
+    .band-footer-social {
+        justify-content: center;
+    }
+
+    .divider span {
+        font-size: 1.6rem;
+        max-width: 90%;
+        white-space: normal; /* allow text to wrap */
+    }
+}
+
+
+/* =============================
    MOBILE STYLES
 ============================= */
 @media (max-width: 768px) {
