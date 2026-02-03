@@ -41,7 +41,6 @@ body {
     justify-content: center;
     gap: 22px;
     margin-bottom: 20px;
-    transition: transform 0.3s ease;
 }
 
 .nav a {
@@ -54,7 +53,6 @@ body {
 
 .nav a.active {
     font-weight: 700;
-    color: black;
 }
 
 /* HAMBURGER */
@@ -69,21 +67,6 @@ body {
     display: none;
     z-index: 1000;
     color: black;
-}
-
-/* =============================
-   HERO
-============================= */
-.hero {
-    text-align: center;
-    margin-top: 30px;
-}
-
-.hero img {
-    width: 50%;
-    max-width: 500px;
-    display: block;
-    margin: 0 auto;
 }
 
 /* =============================
@@ -113,169 +96,9 @@ body {
     font-size: 2rem;
     font-weight: 400;
     color: #D7BE69;
-    letter-spacing: 1px;
     text-align: center;
     white-space: nowrap;
     max-width: 70%;
-}
-
-/* =============================
-   ABOUT & DUO SECTIONS
-============================= */
-.about, .duo {
-    max-width: 1000px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
-}
-
-.about img, .duo img {
-    width: 100%;
-    max-width: 420px;
-}
-
-.about-text, .duo-text {
-    text-align: center;
-    font-size: 1.05rem;
-    line-height: 1.7;
-}
-
-.duo-text h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2rem;
-    color: #D7BE69;
-    font-weight: 400;
-    text-align: center;
-}
-
-/* =============================
-   CONNECT / SOCIAL ICONS
-============================= */
-.connect {
-    text-align: center;
-    margin: 40px 0;
-}
-
-.social-wrap {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 20px;
-}
-
-.social {
-    width: 55px;
-    height: 55px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    overflow: hidden;
-}
-
-.social svg {
-    width: 60%;
-    height: 60%;
-    display: block;
-    fill: white;
-}
-
-.facebook {
-    background-color: #1877f2;
-}
-
-.instagram {
-    background-color: #e1306c;
-}
-
-/* =============================
-   SHOW DATES & SONG MENU IMAGES
-============================= */
-.show-month img,
-.show-week img,
-.song-menu .song-img {
-    width: 90%;
-    max-width: 500px;
-    display: block;
-    margin: 0 auto 20px;
-    border-radius: 8px;
-    object-fit: cover;
-}
-
-/* =============================
-   GALLERY GRID
-============================= */
-.gallery {
-    max-width: 1100px;
-    margin: 50px auto;
-    padding: 0 15px;
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.gallery-img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.gallery-img:hover {
-    transform: scale(1.05);
-}
-
-/* =============================
-   BOOKING HERO
-============================= */
-.booking-hero {
-    background: url('assets/abihero.jpg') center center / cover no-repeat;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 0 20px;
-}
-
-.booking-content .contact-box {
-    background: rgba(255, 255, 255, 0.85);
-    padding: 40px 50px;
-    border-radius: 8px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.2rem;
-    line-height: 1.8;
-    color: #3a342f;
-    display: inline-block;
-}
-
-.booking-content .contact-box h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.8rem;
-    color: #D7BE69;
-    margin-bottom: 20px;
-}
-
-.booking-content .contact-box a {
-    color: #3a342f;
-    text-decoration: underline;
-}
-
-/* =============================
-   FOOTER
-============================= */
-footer {
-    text-align: center;
-    padding: 30px;
-    color: #777;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.8rem;
 }
 
 /* =============================
@@ -285,32 +108,35 @@ footer {
     max-width: 1100px;
     margin: 50px auto;
     display: grid;
-    grid-template-columns: 1fr 1fr; /* desktop side by side */
+    grid-template-columns: 1fr 1fr; /* desktop: two columns per row */
     gap: 60px;
     align-items: center;
 }
 
-.band-section:nth-of-type(even) {
-    direction: rtl; /* flip order for even sections */
+/* Alternate image/text for each row */
+.band-section:nth-of-type(2) {
+    direction: rtl;
 }
-
-.band-section:nth-of-type(even) .band-text {
+.band-section:nth-of-type(2) .band-text {
+    direction: ltr;
     text-align: center;
-    direction: ltr; /* fix text alignment */
 }
 
+/* Band images */
 .band-img img {
     width: 100%;
     border-radius: 8px;
     object-fit: cover;
 }
 
+/* Band text */
 .band-text {
     text-align: center;
     font-size: 1.05rem;
     line-height: 1.7;
 }
 
+/* Footer social icons inside each band section */
 .band-footer-social {
     display: flex;
     justify-content: center;
@@ -339,91 +165,19 @@ footer {
    MOBILE ADJUSTMENTS
 ============================= */
 @media (max-width: 768px) {
-    /* About & Duo stacked */
-    .about, .duo {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .about-img, .duo-img,
-    .band-img img {
-        order: -1;
-        padding: 0 15px;
-        max-width: 420px;
-        margin: 0 auto;
-        width: 90%;
-    }
-
-    .about-text,
-    .band-text {
-        padding: 0 22px;
-    }
-
-    .hero img {
-        width: 85%;
-    }
-
-    .song-menu .song-img,
-    .show-month img,
-    .show-week img {
-        width: 90%;
-        max-height: none;
-    }
-
-    .divider span {
-        font-size: 1.6rem;
-        max-width: 90%;
-        white-space: normal;
-    }
-
-    /* NAV overlay */
-    .nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        background: white;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 0;
-        transform: translateY(-100%);
-        z-index: 999;
-    }
-
-    .nav.open {
-        transform: translateY(0);
-    }
-
-    .nav a {
-        width: 100%;
-        padding: 20px 0;
-        font-size: 1.2rem;
-        border-bottom: 1px solid #ddd;
-        text-align: center;
-    }
-
-    .nav a:last-child {
-        border-bottom: none;
-    }
-
-    .hamburger {
-        display: block;
-    }
-
-    .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-    }
-
-    /* Bands stacked layout */
     .band-section {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        padding: 0 15px;
+        display: grid;
+        grid-template-columns: 1fr; /* single column per row */
+        gap: 20px;
         text-align: center;
-        direction: ltr; /* reset flipped desktop sections */
+        padding: 0 15px;
+        direction: ltr; /* reset any desktop rtl flips */
+    }
+
+    .band-img img {
+        max-width: 420px;
+        width: 90%;
+        margin: 0 auto;
     }
 
     .band-text h2 {
