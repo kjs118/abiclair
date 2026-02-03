@@ -336,7 +336,7 @@ footer {
     order: 2;
 }
 
-.band-section:nth-of-type(even) .band-text {
+.band-section:nth-of-type(odd) .band-text {
     order: 1;
 }
 
