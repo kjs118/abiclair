@@ -90,50 +90,48 @@ body {
    SECTION DIVIDERS
 ============================= */
 /* =============================
-   UNIVERSAL SECTION DIVIDER
+   UNIVERSAL DIVIDERS
 ============================= */
 .divider {
     display: flex;
-    align-items: center;          /* vertical center line with text */
+    align-items: center; /* vertical center */
     justify-content: center;
-    width: 100%;
-    margin: 70px 0 40px;
-    padding: 0 15px;              /* padding so lines don't touch edges */
+    margin: 70px auto 40px;
+    gap: 15px; /* space between text and lines */
+    padding: 0 15px; /* padding on left/right edges */
 }
 
 .divider::before,
 .divider::after {
     content: "";
-    flex: 1;
+    flex: 1; /* lines grow equally */
     height: 1px;
     background: #ccc;
-    max-width: 15%;               /* line max width ~15% each side */
 }
 
 .divider span {
     font-family: 'Cormorant Garamond', serif;
     font-size: 2rem;
     font-weight: 400;
-    letter-spacing: 1px;
     color: #D7BE69;
+    letter-spacing: 1px;
     text-align: center;
-    max-width: 70%;               /* text won't exceed 70% of container */
-    white-space: nowrap;           /* prevents wrapping on desktop */
+    white-space: nowrap; /* prevents unwanted wrapping on desktop */
+    max-width: 70%; /* text will never exceed 70% of container */
 }
 
 /* =============================
    MOBILE ADJUSTMENTS
 ============================= */
 @media (max-width: 768px) {
-    .divider::before,
-    .divider::after {
-        max-width: 20%;           /* slightly longer lines on small screens */
+    .divider {
+        gap: 10px; /* less space on mobile between lines and text */
     }
 
     .divider span {
         font-size: 1.6rem;
-        max-width: 90%;
-        white-space: normal;       /* allows wrapping nicely */
+        white-space: normal; /* allows wrapping nicely on mobile */
+        max-width: 90%; /* slightly wider text area on mobile */
     }
 }
 
