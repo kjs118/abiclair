@@ -379,21 +379,31 @@ footer {
     color: #3a342f;
 }
 
-/* Small footer for social icons under each band */
-.band-footer-social {
-    margin-top: 15px;
-    display: flex;
-    gap: 20px;
-}
-
+/* =============================
+   BAND SECTION SOCIAL ICONS
+============================= */
 .band-footer-social .social {
-    width: 40px;
+    width: 40px;  /* smaller than main icons */
     height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #000; /* black background */
 }
 
 .band-footer-social .social svg {
     width: 60%;
     height: 60%;
+    fill: #fff; /* white icons */
+}
+
+/* Optional spacing between icons */
+.band-footer-social {
+    margin-top: 15px;
+    display: flex;
+    gap: 15px;
 }
 
 /* =============================
