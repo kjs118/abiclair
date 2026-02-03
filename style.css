@@ -186,6 +186,14 @@ body {
     background-color: #e1306c;
 }
 
+.show-month img,
+.show-week img {
+    max-width: 90%;
+    display: block;
+    margin: 0 auto 20px; /* bottom spacing */
+    border-radius: 8px;
+}
+
 
 
 /* =============================
