@@ -14,24 +14,31 @@
 <body>
 
 <header class="site-header">
-    <div class="header-inner">
-        <button class="hamburger" id="hamburger">&#9776;</button>
+  <div class="header-inner">
+    <button class="hamburger" id="hamburger">&#9776;</button>
 
-        <div class="title-nav">
-            <h1 class="logo">ABI CLAIR</h1>
+    <div class="title-nav">
+      <h1 class="logo">ABI CLAIR</h1>
 
-            <nav class="nav" id="nav">
-                <a href="index.html" class="active">Home</a>
-                <a href="shows.html">Show Dates</a>
-                <a href="songs.html">Song Menu</a>
-                <a href="gallery.html">Gallery</a>
-                <a href="booking.html">Booking</a>
-                <a href="https://open.spotify.com" target="_blank">Spotify</a>
-                <a href="https://music.apple.com" target="_blank">Apple Music</a>
-            </nav>
-        </div>
+      <nav class="nav" id="nav">
+        <a href="index.html" class="active">Home</a>
+        <a href="shows.html">Show Dates</a>
+        <a href="songs.html">Song Menu</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="booking.html">Booking</a>
+        <a href="https://open.spotify.com" target="_blank">Spotify</a>
+        <a href="https://music.apple.com" target="_blank">Apple Music</a>
+      </nav>
     </div>
+  </div>
 </header>
+
+<script>
+const hamburger = document.getElementById('hamburger');
+const nav = document.getElementById('nav');
+hamburger.onclick = () => nav.classList.toggle('open');
+</script>
+
 
 <section class="hero">
     <img src="assets/abihero.jpg" alt="Abi Hero">
