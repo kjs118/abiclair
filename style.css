@@ -126,6 +126,30 @@ body {
     font-weight: 400;
 }
 
+@media (max-width: 768px) {
+
+    .about, .duo {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .about img,
+    .duo img {
+        margin: 0 auto;
+        display: block;
+    }
+
+    .about-text,
+    .duo-text {
+        text-align: center;
+    }
+
+    .hero img {
+        margin: 0 auto;
+        display: block;
+    }
+}
+
 /* CONNECT */
 .connect {
     text-align: center;
@@ -146,6 +170,8 @@ body {
     padding: 14px;
     border-radius: 50%;
 }
+
+
 
 .facebook svg { background: #1877f2; }
 .instagram svg { background: #e1306c; }
