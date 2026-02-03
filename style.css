@@ -192,9 +192,9 @@ body {
    SHOW DATES IMAGES
 ============================= */
 .show-month img {
-    max-height: 650px;
+    max-height: 750px;
     width: auto;
-    max-width: 85%;
+    max-width: 90%;
     display: block;
     margin: 0 auto 20px;
     border-radius: 8px;
@@ -224,7 +224,7 @@ body {
 }
 
 .song-menu .song-img {
-    width: 60%;
+    width: 80%;
     max-width: 500px;
     border-radius: 8px;
     margin: 0 auto;
