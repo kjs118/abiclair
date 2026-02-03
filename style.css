@@ -316,13 +316,13 @@ footer {
     max-width: 1100px;
     margin: 50px auto;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr; /* desktop: image + text side by side */
     gap: 60px;
     align-items: center;
 }
 
 .band-section:nth-child(even) .band-img {
-    order: 2;
+    order: 2; /* alternate image/text for even sections */
 }
 
 .band-section .band-img img {
@@ -337,6 +337,7 @@ footer {
     line-height: 1.7;
 }
 
+/* Footer socials inside each band section text */
 .band-footer-social {
     display: flex;
     justify-content: center;
@@ -359,6 +360,41 @@ footer {
     width: 60%;
     height: 60%;
     fill: #fff;
+}
+
+/* =============================
+   MOBILE ADJUSTMENTS FOR BANDS
+============================= */
+@media (max-width: 768px) {
+    .band-section {
+        display: flex;
+        flex-direction: column; /* stack image above text */
+        gap: 30px;
+        padding: 0 15px;
+        text-align: center; /* ensures text remains centered */
+    }
+
+    .band-section .band-img {
+        order: unset; /* remove desktop alternating order */
+    }
+
+    .band-section .band-img img {
+        max-width: 420px;
+        width: 90%; /* responsive width */
+        margin: 0 auto; /* center the image */
+    }
+
+    .band-text h2 {
+        font-size: 1.8rem;
+    }
+
+    .band-text p {
+        font-size: 1rem;
+    }
+
+    .band-footer-social {
+        justify-content: center;
+    }
 }
 
 /* =============================
