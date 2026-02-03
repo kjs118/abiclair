@@ -67,6 +67,7 @@ body {
     font-size: 26px;
     display: none;
     z-index: 1000;
+    color: black; /* make hamburger black */
 }
 
 /* =============================
@@ -79,7 +80,7 @@ body {
 
 .hero img {
     width: 50%;
-    max-width: 600px;
+    max-width: 500px; /* slightly smaller on desktop */
     display: block;
     margin: 0 auto;
 }
@@ -154,14 +155,14 @@ body {
 .social-wrap {
     display: flex;
     justify-content: center;
-    gap: 25px; /* more space between icons */
+    gap: 30px; /* more space between icons */
     margin-top: 20px;
 }
 
 /* Container circle */
 .social {
-    width: 60px;   /* bigger circle */
-    height: 60px;
+    width: 55px;   /* slightly smaller than before */
+    height: 55px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -171,7 +172,7 @@ body {
 
 /* SVG inside the container */
 .social svg {
-    width: 60%;     /* fills 60% of circle */
+    width: 60%;     /* proportional to circle */
     height: 60%;
     display: block;
     fill: white;
@@ -186,15 +187,16 @@ body {
     background-color: #e1306c;
 }
 
+/* =============================
+   SHOW DATES IMAGES
+============================= */
 .show-month img,
 .show-week img {
-    max-width: 90%;
+    max-width: 70%;  /* smaller on desktop */
     display: block;
-    margin: 0 auto 20px; /* bottom spacing */
+    margin: 0 auto 20px;
     border-radius: 8px;
 }
-
-
 
 /* =============================
    FOOTER
@@ -233,6 +235,12 @@ footer {
         width: 85%;
     }
 
+    /* Show dates images larger on mobile */
+    .show-month img,
+    .show-week img {
+        max-width: 90%;
+    }
+
     /* NAV overlay */
     .nav {
         position: fixed;
@@ -267,6 +275,6 @@ footer {
 
     .hamburger {
         display: block;
+        color: black; /* ensure black on mobile */
     }
-
 }
