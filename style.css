@@ -1,135 +1,147 @@
-/* ==============================
-   RESET
-============================== */
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
 body {
-    font-family: 'Georgia', serif;
-    background: #ffffff;
+    margin: 0;
+    font-family: Georgia, serif;
+    background: white;
     color: #3a342f;
-    line-height: 1.6;
 }
 
-.page-wrap {
+/* HEADER */
+.site-header {
+    background: white;
+    border-bottom: 1px solid #eee;
+}
+
+.header-inner {
     max-width: 1100px;
     margin: auto;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 }
 
-/* ==============================
-   TYPOGRAPHY
-============================== */
-h1, h2 {
-    font-weight: normal;
-    letter-spacing: 1px;
-}
-
-h1 {
-    font-size: 2.5rem;
-    color: #8c6b3f; /* soft gold */
-}
-
-h2 {
-    font-size: 1.6rem;
+.logo {
     color: #8c6b3f;
-    margin-bottom: 10px;
+    font-size: 2rem;
+    letter-spacing: 2px;
 }
 
-p {
-    font-size: 1rem;
+.nav {
+    margin-top: 5px;
 }
 
-/* ==============================
-   HERO
-============================== */
+.nav a {
+    margin: 0 12px;
+    text-decoration: none;
+    color: #8c6b3f;
+    font-size: 0.9rem;
+}
+
+.hamburger {
+    position: absolute;
+    left: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    display: none;
+}
+
+/* HERO */
 .hero img {
     width: 100%;
-    height: auto;
-    display: block;
 }
 
-/* ==============================
-   IMAGE SECTIONS
-============================== */
-.feature,
-.duo {
-    padding: 60px 20px;
+/* DIVIDERS */
+.divider {
     text-align: center;
+    margin: 60px 0 30px;
+    position: relative;
 }
 
-.feature img,
-.duo img {
-    width: 70%;
-    max-width: 700px;
+.divider::before {
+    content: "";
+    height: 1px;
+    background: #ccc;
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    right: 10%;
+}
+
+.divider span {
+    background: white;
+    padding: 0 15px;
+    position: relative;
+    color: #8c6b3f;
+}
+
+/* ABOUT + DUO */
+.about, .duo {
+    max-width: 1100px;
     margin: auto;
-}
-
-/* ==============================
-   SHOW DATES
-============================== */
-.show-dates {
-    padding: 60px 20px;
-    text-align: center;
-}
-
-.show-dates img {
-    width: 70%;
-    max-width: 600px;
-    margin: 10px auto 40px auto;
-    display: block;
-}
-
-/* ==============================
-   GALLERY
-============================== */
-.gallery {
-    padding: 60px 20px;
-    text-align: center;
-}
-
-.gallery h1 {
-    margin-bottom: 30px;
-}
-
-.gallery .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 15px;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    padding: 20px;
 }
 
-.gallery .grid img {
-    width: 100%;
-    cursor: pointer;
-}
-
-/* ==============================
-   SONG MENU
-============================== */
-.song-menu {
-    padding: 60px 20px;
+.about-text {
     text-align: center;
 }
 
-.song-menu img {
-    width: 70%;
-    max-width: 700px;
-    margin: 20px auto;
-    display: block;
+.duo-text h2 {
+    color: #8c6b3f;
 }
 
-/* ==============================
-   RESPONSIVE
-============================== */
+/* CONNECT */
+.connect {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.social svg {
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+    fill: white;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.facebook { background: #1877f2; }
+.instagram { background: #e1306c; }
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 30px;
+    font-size: 0.8rem;
+    color: #777;
+}
+
+/* MOBILE */
 @media (max-width: 768px) {
-    .feature img,
-    .duo img,
-    .show-dates img,
-    .song-menu img {
-        width: 90%;
+    .about, .duo {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .duo-img { order: -1; }
+    .about-img { order: -1; }
+
+    .nav {
+        display: none;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav.open {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
     }
 }
