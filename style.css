@@ -331,6 +331,16 @@ footer {
     line-height: 1.7;
 }
 
+/* Alternate layout on desktop only */
+.band-section:nth-of-type(even) .band-img {
+    order: 2;
+}
+
+.band-section:nth-of-type(even) .band-text {
+    order: 1;
+}
+
+
 .band-footer-social {
     display: flex;
     justify-content: center;
