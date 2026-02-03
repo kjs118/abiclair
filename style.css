@@ -1,9 +1,12 @@
 body {
     margin: 0;
-    font-family: 'Libre Baskerville', serif;
+    font-family: 'Cormorant Garamond', serif;
     background: white;
     color: #3a342f;
 }
+
+/* Elegant thin typography */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400&display=swap');
 
 /* HEADER */
 .site-header {
@@ -19,39 +22,46 @@ body {
 }
 
 .logo {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    font-size: 2.8rem;
-    color: #8c6b3f;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 3rem;
+    color: #D7BE69;
     margin-bottom: 10px;
+    letter-spacing: 2px;
 }
 
 /* NAV */
 .nav {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 22px;
     margin-bottom: 20px;
 }
 
 .nav a {
-    color: #8c6b3f;
+    color: black;
     text-decoration: none;
     font-size: 0.9rem;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+}
+
+.nav a.active {
+    font-weight: 700;
 }
 
 /* HAMBURGER */
 .hamburger {
     position: absolute;
     left: 15px;
-    top: 25px;
+    top: 28px;
     background: none;
     border: none;
     font-size: 26px;
     display: none;
 }
 
-/* HERO FIX */
+/* HERO */
 .hero {
     text-align: center;
     margin-top: 20px;
@@ -62,29 +72,30 @@ body {
     max-width: 600px;
 }
 
-/* DIVIDER */
+/* DIVIDER — LINES DO NOT CROSS TEXT */
 .divider {
-    text-align: center;
-    margin: 80px 0 40px;
-    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 90px 0 40px;
+    gap: 25px;
 }
 
-.divider::before {
+.divider::before,
+.divider::after {
     content: "";
+    flex: 1;
     height: 1px;
     background: #ccc;
-    position: absolute;
-    top: 50%;
-    left: 15%;
-    right: 15%;
+    max-width: 200px;
 }
 
 .divider span {
-    background: white;
-    padding: 0 20px;
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
-    color: #8c6b3f;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    color: #D7BE69;
+    font-weight: 400;
+    letter-spacing: 1px;
 }
 
 /* ABOUT & DUO */
@@ -93,7 +104,7 @@ body {
     margin: auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 50px;
+    gap: 60px;
     align-items: center;
 }
 
@@ -104,6 +115,15 @@ body {
 
 .about-text {
     text-align: center;
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.duo-text h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    color: #D7BE69;
+    font-weight: 400;
 }
 
 /* CONNECT */
@@ -135,6 +155,8 @@ footer {
     text-align: center;
     padding: 30px;
     color: #777;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
 }
 
 /* MOBILE */
