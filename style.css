@@ -266,20 +266,19 @@ body {
         max-height: none; /* scale naturally */
     }
 }
-
 /* =============================
    GALLERY GRID
 ============================= */
 .gallery {
     max-width: 1100px;
     margin: 50px auto;
-    padding: 0 15px;
+    padding: 0 20px; /* padding around the grid */
 }
 
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 columns desktop */
-    gap: 20px;
+    gap: 20px; /* space between images */
 }
 
 .gallery-img {
