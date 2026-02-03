@@ -93,27 +93,30 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 90px 0 40px;
-    gap: 25px;
+    margin: 60px 0 40px; /* adjust spacing */
+    gap: 15px; /* space between line and text */
+    flex-wrap: wrap; /* allow text to wrap but lines stay visible */
 }
 
 .divider::before,
 .divider::after {
     content: "";
-    flex: 1;
+    flex: 1 1 50px; /* grow but don’t disappear on wrap */
     height: 1px;
     background: #ccc;
-    max-width: 200px;
+    min-width: 30px; /* ensure a tiny line remains if very small screen */
 }
 
 .divider span {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: #D7BE69;
     font-weight: 400;
     letter-spacing: 1px;
-    text-align: center; /* ensures centered on mobile wrap */
+    white-space: nowrap; /* keeps text on one line if possible */
+    text-align: center;
 }
+
 
 /* =============================
    ABOUT & DUO SECTIONS
