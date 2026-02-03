@@ -89,59 +89,44 @@ body {
 /* =============================
    SECTION DIVIDERS
 ============================= */
-/* Standard dividers remain unchanged */
-.divider {
+/* Song Menu Divider */
+.divider-order {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 90px 0 40px;
-    gap: 25px;
+    margin: 70px 0 40px;
+    gap: 20px; /* space between text and lines */
 }
 
-.divider::before,
-.divider::after {
+.divider-order::before,
+.divider-order::after {
     content: "";
     flex: 1;
     height: 1px;
     background: #ccc;
-    max-width: 200px;
 }
 
-.divider span {
+.divider-order span {
     font-family: 'Cormorant Garamond', serif;
     font-size: 2rem;
     color: #D7BE69;
     font-weight: 400;
     letter-spacing: 1px;
-}
-
-/* =============================
-   Order Your Favorites Divider
-============================= */
-.divider.order-favorites {
-    gap: 20px;
-}
-
-.divider.order-favorites::before,
-.divider.order-favorites::after {
-    max-width: 40%; /* lines take ~40% of container each on desktop */
-}
-
-.divider.order-favorites span {
-    max-width: 400px;   /* allows text to wrap but leaves space for lines */
     text-align: center;
+    white-space: nowrap; /* prevents excessive wrapping on desktop */
+    max-width: 70%;       /* leaves some room for the lines */
 }
 
 /* MOBILE OVERRIDE */
 @media (max-width: 768px) {
-    .divider.order-favorites::before,
-    .divider.order-favorites::after {
-        max-width: 20%; /* lines shrink on small screens */
+    .divider-order {
+        gap: 10px;
     }
 
-    .divider.order-favorites span {
-        max-width: 180px; /* wraps nicely on mobile */
-        font-size: 1.8rem; /* slightly smaller on mobile */
+    .divider-order span {
+        font-size: 1.6rem;
+        max-width: 90%;
+        white-space: normal; /* allow wrapping nicely on mobile */
     }
 }
 
