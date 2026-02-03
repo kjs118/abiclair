@@ -89,29 +89,31 @@ body {
 /* =============================
    SECTION DIVIDERS
 ============================= */
-.divider {
+/* Divider adjustments for Order Your Favorites */
+.divider.order-favorites {
     display: flex;
-    align-items: flex-start; /* top-align the lines when text wraps */
+    align-items: center;      /* vertically center the lines */
     justify-content: center;
-    margin: 60px 0 40px;
+    margin: 60px 0 40px;     /* top & bottom spacing */
     gap: 15px;
 }
 
-.divider::before,
-.divider::after {
+.divider.order-favorites::before,
+.divider.order-favorites::after {
     content: "";
     flex: 1;
     height: 1px;
     background: #ccc;
-    margin-top: 0.6em; /* align with the first line of text */
+    max-width: 100px;         /* limits the line width so text has space */
 }
 
-.divider span {
+.divider.order-favorites span {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.8rem;
+    font-size: 2rem;
     color: #D7BE69;
     font-weight: 400;
     letter-spacing: 1px;
+    max-width: 220px;         /* ensures text wraps before filling full width */
     text-align: center;
 }
 
