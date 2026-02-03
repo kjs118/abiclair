@@ -67,7 +67,7 @@ body {
     font-size: 26px;
     display: none;
     z-index: 1000;
-    color: black; /* make hamburger black */
+    color: black; /* forces black on mobile */
 }
 
 /* =============================
@@ -190,12 +190,27 @@ body {
 /* =============================
    SHOW DATES IMAGES
 ============================= */
-.show-month img,
-.show-week img {
-    max-width: 70%;  /* smaller on desktop */
+
+/* THIS MONTH image: cap height */
+.show-month img {
+    max-height: 500px;   /* limits vertical size */
+    width: auto;
+    max-width: 90%;
     display: block;
     margin: 0 auto 20px;
     border-radius: 8px;
+    object-fit: cover;
+}
+
+/* THIS WEEK image: slightly larger width but reasonable height */
+.show-week img {
+    max-height: 400px;   /* slightly shorter */
+    width: auto;
+    max-width: 85%;
+    display: block;
+    margin: 0 auto 20px;
+    border-radius: 8px;
+    object-fit: cover;
 }
 
 /* =============================
@@ -239,6 +254,7 @@ footer {
     .show-month img,
     .show-week img {
         max-width: 90%;
+        max-height: none;
     }
 
     /* NAV overlay */
