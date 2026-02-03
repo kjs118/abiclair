@@ -192,7 +192,7 @@ body {
    SHOW DATES IMAGES
 ============================= */
 .show-month img {
-    max-height: 600px;
+    max-height: 650px;
     width: auto;
     max-width: 85%;
     display: block;
