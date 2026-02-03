@@ -264,7 +264,7 @@ body {
 ============================= */
 .booking-hero {
     background: url('assets/abihero.jpg') center center / cover no-repeat;
-    height: 100vh; 
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -296,33 +296,29 @@ body {
 }
 
 /* =============================
-   FOOTER
-============================= */
-footer {
-    text-align: center;
-    padding: 30px;
-    color: #777;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.8rem;
-}
-
-/* =============================
    BANDS SECTIONS
 ============================= */
 .band-section {
     max-width: 1100px;
     margin: 50px auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-wrap: nowrap;
     gap: 60px;
     align-items: center;
+    padding: 0 15px;
 }
 
+.band-section .band-img,
+.band-section .band-text {
+    flex: 1 1 50%;
+    min-width: 0;
+}
 
 .band-section .band-img img {
     width: 100%;
     border-radius: 8px;
     object-fit: cover;
+    display: block;
 }
 
 .band-section .band-text {
@@ -331,15 +327,10 @@ footer {
     line-height: 1.7;
 }
 
-/* Alternate layout on desktop only */
-.band-section:nth-of-type(even) .band-img {
-    order: 2;
+/* Alternate layout: reverse image/text on even bands (Thunder Child) */
+.band-section:nth-child(even) {
+    flex-direction: row-reverse;
 }
-
-.band-section:nth-of-type(odd) .band-text {
-    order: 1;
-}
-
 
 .band-footer-social {
     display: flex;
@@ -366,69 +357,22 @@ footer {
 }
 
 /* =============================
-   MOBILE ADJUSTMENTS
+   FOOTER
 ============================= */
-@media (max-width: 768px) {
-    .band-section {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 30px;
-        padding: 0 15px;
-    }
-
-    .band-section .band-img,
-    .band-section .band-text {
-        order: unset; /* remove desktop ordering */
-    }
-
-    .band-section .band-img img {
-        width: 90%;
-        max-width: 420px;
-        margin: 0 auto;
-    }
-
-    .band-text h2 {
-        font-size: 1.8rem;
-    }
-
-    .band-text p {
-        font-size: 1rem;
-    }
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #777;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
 }
 
 /* =============================
-   ABOUT & DUO SECTIONS MOBILE
+   MOBILE ADJUSTMENTS
 ============================= */
 @media (max-width: 768px) {
-    .about, .duo {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .about-img, .duo-img {
-        order: -1;
-        padding: 0 15px;
-    }
-
-    .about-text {
-        padding: 0 22px;
-    }
-
-    .hero img {
-        width: 85%;
-    }
-
-    .song-menu .song-img,
-    .show-month img,
-    .show-week img {
-        width: 90%;
-        max-height: none;
-    }
-
-    .divider span {
-        font-size: 1.6rem;
-        max-width: 90%;
-        white-space: normal;
+    .hamburger {
+        display: block;
     }
 
     .nav {
@@ -462,12 +406,70 @@ footer {
         border-bottom: none;
     }
 
-    .hamburger {
-        display: block;
+    .about, .duo {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .about-img, .duo-img {
+        order: -1;
+        padding: 0 15px;
+    }
+
+    .about-text {
+        padding: 0 22px;
+    }
+
+    .hero img {
+        width: 85%;
+    }
+
+    .song-menu .song-img,
+    .show-month img,
+    .show-week img {
+        width: 90%;
+        max-height: none;
+    }
+
+    .divider span {
+        font-size: 1.6rem;
+        max-width: 90%;
+        white-space: normal;
     }
 
     .gallery-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
+    }
+
+    /* Bands mobile */
+    .band-section {
+        flex-direction: column !important;
+        gap: 30px;
+        align-items: center;
+    }
+
+    .band-section .band-img,
+    .band-section .band-text {
+        flex: none;
+        width: 100%;
+    }
+
+    .band-section .band-img img {
+        width: 90%;
+        max-width: 420px;
+        margin: 0 auto;
+    }
+
+    .band-section:nth-child(even) {
+        flex-direction: column; /* ensure no reverse on mobile */
+    }
+
+    .band-text h2 {
+        font-size: 1.8rem;
+    }
+
+    .band-text p {
+        font-size: 1rem;
     }
 }
