@@ -154,25 +154,30 @@ body {
 .social-wrap {
     display: flex;
     justify-content: center;
-    gap: 25px; /* space between icons */
+    gap: 15px; /* smaller spacing between icons */
     margin-top: 20px;
 }
 
 .social {
-    width: 60px;
-    height: 60px;
+    width: 40px;  /* smaller circle */
+    height: 40px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .social svg {
-    width: 100%;
-    height: 100%;
+    width: 24px;   /* actual icon size */
+    height: 24px;
     fill: white;
-    padding: 14px;
     border-radius: 50%;
+    background-color: inherit; /* set via parent class */
 }
 
+/* Background colors for each icon */
 .facebook svg { background: #1877f2; }
 .instagram svg { background: #e1306c; }
+
 
 /* =============================
    FOOTER
