@@ -1,5 +1,5 @@
 /* ==============================
-   GLOBAL RESET
+   RESET
 ============================== */
 *,
 *::before,
@@ -9,134 +9,127 @@
     padding: 0;
 }
 
-html, body {
-    font-family: 'Montserrat', sans-serif;
-    background: #000;
-    color: #eee;
-    text-align: center;
-    width: 100%;
-    overflow-x: hidden;
+body {
+    font-family: 'Georgia', serif;
+    background: #ffffff;
+    color: #3a342f;
+    line-height: 1.6;
 }
 
 .page-wrap {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-section {
-    padding: 60px 20px;
-}
-
-h1, h2 {
-    margin-bottom: 15px;
+    max-width: 1100px;
+    margin: auto;
 }
 
 /* ==============================
-   LINKS
+   TYPOGRAPHY
 ============================== */
-a {
-    color: #F15A24;
-    text-decoration: none;
+h1, h2 {
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #8c6b3f; /* soft gold */
+}
+
+h2 {
+    font-size: 1.6rem;
+    color: #8c6b3f;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1rem;
 }
 
 /* ==============================
    HERO
 ============================== */
-.hero {
-    position: relative;
-    max-height: 85vh;
-    overflow: hidden;
-    border-bottom: 4px solid #F15A24;
-}
-
 .hero img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.85;
-}
-
-.hero-overlay {
-    position: absolute;
-    bottom: 10%;
-    left: 5%;
-    text-align: left;
-}
-
-.hero-overlay h1 {
-    font-size: 3rem;
-    color: #fff;
-}
-
-.hero-overlay p {
-    font-size: 1.2rem;
-    color: #F15A24;
+    height: auto;
+    display: block;
 }
 
 /* ==============================
-   FEATURE & DUO
+   IMAGE SECTIONS
 ============================== */
-.feature {
-    background: #111;
-    border-radius: 16px;
-}
-
+.feature,
 .duo {
-    background: #0c0c0c;
-    border-radius: 16px;
+    padding: 60px 20px;
+    text-align: center;
 }
 
 .feature img,
 .duo img {
-    width: 90%;
-    max-width: 1000px;
-    margin: 0 auto;
-    border-radius: 12px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+    width: 70%;
+    max-width: 700px;
+    margin: auto;
 }
 
 /* ==============================
    SHOW DATES
 ============================== */
 .show-dates {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
-}
-
-.show-dates div {
-    flex: 1 1 320px;
-    background: #111;
-    padding: 20px;
-    border-radius: 16px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    padding: 60px 20px;
+    text-align: center;
 }
 
 .show-dates img {
-    margin-top: 10px;
-    border-radius: 10px;
+    width: 70%;
+    max-width: 600px;
+    margin: 10px auto 40px auto;
+    display: block;
+}
+
+/* ==============================
+   GALLERY
+============================== */
+.gallery {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.gallery h1 {
+    margin-bottom: 30px;
+}
+
+.gallery .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+.gallery .grid img {
+    width: 100%;
+    cursor: pointer;
+}
+
+/* ==============================
+   SONG MENU
+============================== */
+.song-menu {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.song-menu img {
+    width: 70%;
+    max-width: 700px;
+    margin: 20px auto;
+    display: block;
 }
 
 /* ==============================
    RESPONSIVE
 ============================== */
 @media (max-width: 768px) {
-    .hero-overlay h1 {
-        font-size: 2rem;
-    }
-
-    .hero-overlay p {
-        font-size: 1rem;
-    }
-
-    .show-dates {
-        flex-direction: column;
+    .feature img,
+    .duo img,
+    .show-dates img,
+    .song-menu img {
+        width: 90%;
     }
 }
