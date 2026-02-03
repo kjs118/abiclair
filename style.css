@@ -154,29 +154,38 @@ body {
 .social-wrap {
     display: flex;
     justify-content: center;
-    gap: 15px; /* smaller spacing between icons */
+    gap: 25px; /* more space between icons */
     margin-top: 20px;
 }
 
+/* Container circle */
 .social {
-    width: 40px;  /* smaller circle */
-    height: 40px;
-    display: inline-flex;
+    width: 60px;   /* bigger circle */
+    height: 60px;
+    display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.social svg {
-    width: 24px;   /* actual icon size */
-    height: 24px;
-    fill: white;
     border-radius: 50%;
-    background-color: inherit; /* set via parent class */
+    overflow: hidden;
 }
 
-/* Background colors for each icon */
-.facebook svg { background: #1877f2; }
-.instagram svg { background: #e1306c; }
+/* SVG inside the container */
+.social svg {
+    width: 60%;     /* fills 60% of circle */
+    height: 60%;
+    display: block;
+    fill: white;
+}
+
+/* Background colors */
+.facebook {
+    background-color: #1877f2;
+}
+
+.instagram {
+    background-color: #e1306c;
+}
+
 
 
 /* =============================
